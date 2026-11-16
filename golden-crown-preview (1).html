@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en-ZA" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Golden Crown | Professional Cleaning Services in Gauteng</title>
+  <meta name="description" content="Golden Crown delivers reliable residential and commercial cleaning, fast booking and transparent pricing across Johannesburg, Pretoria and Gauteng." />
+  <meta name="theme-color" content="#09090b" />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            obsidian: {
+              800: '#1c1c21',
+              900: '#121215',
+              950: '#09090b',
+            },
+            gold: {
+              300: '#f5d97e',
+              400: '#e6be53',
+              500: '#d4af37',
+              600: '#b59024',
+              700: '#8f6f16',
+            },
+            whatsapp: {
+              500: '#25D366',
+              600: '#16a34a',
+              700: '#15803d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js via CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.9/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    .gold-gradient {
+      background: linear-gradient(135deg, #f5d97e 0%, #d4af37 50%, #b59024 100%);
+    }
+    .gold-gradient-hover:hover {
+      background: linear-gradient(135deg, #fae396 0%, #e0bc46 50%, #c49d2b 100%);
+    }
+    .gold-text-gradient {
+      background: linear-gradient(135deg, #f5d97e 0%, #d4af37 60%, #e6be53 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%23d4af37'/%3E%3Cpath d='M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z' fill='%2309090b' transform='translate(2 2) scale(.83)'/%3E%3C/svg%3E" />
+  <style>
+    :focus-visible{outline:2px solid #e6be53;outline-offset:2px}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body
+  class="bg-obsidian-950 text-zinc-100 antialiased selection:bg-gold-500 selection:text-obsidian-950 pb-20 md:pb-0"
+  x-data="goldenCrownApp()"
+>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[70] focus:bg-gold-500 focus:text-obsidian-950 focus:px-4 focus:py-2 focus:rounded-lg font-bold">Skip to content</a>
+
+  <div class="bg-gold-500 text-obsidian-950 text-xs font-bold text-center py-1.5 px-3">DESIGN PREVIEW &mdash; not a live site. Legal pages and cookie banner are included in the full version.</div>
+
+  <!-- Top Authority Strip (Desktop & Tablet) -->
+  <div class="hidden md:block bg-black text-zinc-400 text-xs py-2.5 border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+          <span class="text-zinc-200 font-medium">Serving All of Gauteng:</span> Johannesburg • Sandton • Midrand • Pretoria
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg aria-hidden="true" class="w-3.5 h-3.5 text-gold-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Mon–Sat: 07:00 – 18:00 • Same-day bookings where possible
+        </span>
+      </div>
+      <div class="flex items-center gap-5">
+        <a
+          href="tel:+27632373143"
+          :href="'tel:' + phoneRaw"
+          class="text-gold-400 hover:text-gold-300 font-semibold transition-colors flex items-center gap-1.5"
+        >
+          <svg aria-hidden="true" class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          <span x-text="phoneDisplay">063 237 3143</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-lg border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        <!-- Golden Crown Brand Emblem -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl gold-gradient flex items-center justify-center text-obsidian-950 shadow-lg shadow-gold-500/15 group-hover:scale-105 transition-transform shrink-0">
+            <!-- Crown SVG -->
+            <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/>
+            </svg>
+          </div>
+          <div class="leading-tight">
+            <span class="block font-display font-extrabold text-white text-base sm:text-lg tracking-wide uppercase">Golden Crown</span>
+            <span class="block text-[10px] sm:text-[11px] font-semibold text-gold-400 tracking-[0.18em] uppercase">Cleaning Services</span>
+          </div>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-300">
+          <a href="#services" class="hover:text-gold-400 transition-colors">Services</a>
+          <a href="#why-us" class="hover:text-gold-400 transition-colors">Why Golden Crown</a>
+          <a href="#work" class="hover:text-gold-400 transition-colors">Our Work</a>
+          <a href="#quote" class="hover:text-gold-400 transition-colors">Free Quote</a>
+        </nav>
+
+        <!-- Header CTAs -->
+        <div class="flex items-center gap-2.5">
+          <button type="button" class="lg:hidden order-last w-10 h-10 rounded-xl border border-zinc-700 text-white flex items-center justify-center" @click="menu=!menu" :aria-expanded="menu" aria-label="Toggle menu"><svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+          <a
+            href="tel:+27632373143"
+            :href="'tel:' + phoneRaw"
+            class="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-zinc-700 hover:border-gold-500/60 bg-obsidian-900 text-white text-xs sm:text-sm font-semibold transition-all"
+          >
+            <svg aria-hidden="true" class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span>Call Now</span>
+          </a>
+
+          <a
+            href="#quote"
+            class="inline-flex items-center gap-1.5 gold-gradient gold-gradient-hover text-obsidian-950 text-xs sm:text-sm font-extrabold px-4 sm:px-5 py-2.5 rounded-xl shadow-lg shadow-gold-500/20 transition-all"
+          >
+            <span>Free Quote</span>
+            <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+        </div>
+      </div>
+      <nav x-show="menu" x-cloak @click="menu=false" aria-label="Mobile" class="lg:hidden pb-4 grid gap-1 text-sm font-medium text-zinc-200"><a class="px-3 py-2.5 rounded-lg hover:bg-obsidian-800" href="#services">Services</a><a class="px-3 py-2.5 rounded-lg hover:bg-obsidian-800" href="#why-us">Why Golden Crown</a><a class="px-3 py-2.5 rounded-lg hover:bg-obsidian-800" href="#work">Our Work</a><a class="px-3 py-2.5 rounded-lg hover:bg-obsidian-800" href="#quote">Free Quote</a></nav>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-obsidian-950">
+    <!-- Subtle Luxury Architectural Grid & Gold Ambient Lighting -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(212,175,55,0.16),_transparent_50%),radial-gradient(ellipse_at_bottom_left,_rgba(212,175,55,0.06),_transparent_50%)]"></div>
+    <div class="absolute inset-0 opacity-[0.035]" style="background-image: linear-gradient(#d4af37 1px, transparent 1px), linear-gradient(90deg, #d4af37 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Hero Left Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <!-- Authority Eyebrow -->
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-obsidian-900 border border-gold-500/30 text-xs sm:text-sm font-semibold text-gold-300 shadow-sm">
+            <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/></svg>
+            <span>Gauteng’s Gold Standard in Cleaning &amp; Service</span>
+          </div>
+
+          <!-- Commanding Headline -->
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.5rem] leading-[1.09] tracking-tight text-white">
+            Unmatched Reliability. <span class="gold-text-gradient">Spotless Results.</span> Fast Booking.
+          </h1>
+
+          <!-- Value-Driven Subheadline -->
+          <p class="text-base sm:text-lg text-zinc-300 leading-relaxed max-w-2xl">
+            From spotless homes to large-scale commercial cleaning, <strong class="text-white font-semibold">Golden Crown</strong> delivers vetted cleaners, upfront pricing, and fast booking across Johannesburg, Pretoria, and greater Gauteng.
+          </p>
+
+          <!-- Primary & Secondary Hero CTAs -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-2">
+            <!-- Primary Gold CTA -->
+            <a
+              href="#quote"
+              class="inline-flex items-center justify-center gap-2.5 gold-gradient gold-gradient-hover active:scale-[0.99] text-obsidian-950 font-extrabold text-base px-7 py-4 rounded-xl shadow-xl shadow-gold-500/20 transition-all"
+            >
+              <span>Request Free Quote</span>
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+
+            <!-- High-Trust Call Now Button -->
+            <a
+              href="tel:+27632373143"
+              :href="'tel:' + phoneRaw"
+              class="inline-flex items-center justify-center gap-2.5 bg-obsidian-900 hover:bg-obsidian-800 border border-gold-500/40 text-white font-bold text-base px-6 py-4 rounded-xl transition-all"
+            >
+              <svg aria-hidden="true" class="w-5 h-5 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span>Call Now</span>
+            </a>
+
+            <!-- Secondary WhatsApp Button -->
+            <a
+              href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20to%20request%20a%20free%20quote%20in%20Gauteng."
+              :href="quickWhatsApp('Hello Golden Crown, I would like to request a free quote in Gauteng.')"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2 bg-whatsapp-600 hover:bg-whatsapp-700 active:scale-[0.99] text-white font-bold text-base px-5 py-4 rounded-xl shadow-lg transition-all"
+            >
+              <svg aria-hidden="true" class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.031-1.313-5-4.375-5.156-4.578-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406 0 .578.016.188.016.438-.078.688.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.156.328-.297.5-.156.172-.313.391-.453.516-.156.141-.313.297-.141.594.172.297.766 1.266 1.656 2.063 1.141 1.016 2.109 1.328 2.406 1.484.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.703.813 2 .953.297.141.484.219.563.344.078.125.078.734-.172 1.438z"/></svg>
+              <span>WhatsApp</span>
+            </a>
+          </div>
+
+          <!-- Micro Proof Points -->
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 pt-2 text-xs sm:text-sm text-zinc-400">
+            <span class="inline-flex items-center gap-1.5">
+              <svg aria-hidden="true" class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Upfront written quotes
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg aria-hidden="true" class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Itemised, written pricing
+            </span>
+            <span class="inline-flex items-center gap-1.5">
+              <svg aria-hidden="true" class="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              Residential &amp; Commercial
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Right Card: Executive Instant Callback / WhatsApp Selector -->
+        <div class="lg:col-span-5">
+          <div class="bg-obsidian-900/95 border border-gold-500/30 rounded-2xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 inset-x-0 h-1 gold-gradient"></div>
+
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-4 mb-5">
+              <div>
+                <p class="text-[11px] font-bold uppercase tracking-widest text-gold-400">Priority Gauteng Booking</p>
+                <h2 class="font-display font-bold text-xl text-white mt-0.5">Fast-Track Your Quote</h2>
+              </div>
+              <div class="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400">
+                <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <template x-for="svc in serviceCards" :key="svc.title">
+                <button
+                  type="button"
+                  @click="selectServiceAndScroll(svc.title)"
+                  class="w-full text-left p-3.5 rounded-xl bg-obsidian-950/90 hover:bg-obsidian-800 border border-zinc-800 hover:border-gold-500/60 transition-all group flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <span class="block font-semibold text-white text-sm group-hover:text-gold-300 transition-colors" x-text="svc.title"></span>
+                    <span class="block text-xs text-zinc-400 mt-0.5" x-text="svc.shortDesc"></span>
+                  </div>
+                  <svg aria-hidden="true" class="w-4 h-4 text-zinc-500 group-hover:text-gold-400 group-hover:translate-x-0.5 transition-all shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                </button>
+              </template>
+            </div>
+
+            <div class="mt-5 pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-400">
+              <span>Tap any category to pre-fill quote</span>
+              <span class="text-gold-400 font-semibold">Fast response</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. TRUST & AUTHORITY BAR -->
+  <section class="bg-obsidian-900 border-y border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+
+        <!-- Badge 1 -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-obsidian-950/80 border border-zinc-800/90">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-white text-base sm:text-lg">Spotless Quality</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">Every clean is completed to exacting standards, with a clear written quote before work begins.</p>
+          </div>
+        </div>
+
+        <!-- Badge 2 -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-obsidian-950/80 border border-zinc-800/90">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-white text-base sm:text-lg">Fast Response Times</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">We aim to respond quickly and arrange site assessments across Johannesburg and Pretoria.</p>
+          </div>
+        </div>
+
+        <!-- Badge 3 -->
+        <div class="flex items-start gap-4 p-5 rounded-2xl bg-obsidian-950/80 border border-zinc-800/90">
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 shrink-0">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <div>
+            <h3 class="font-display font-bold text-white text-base sm:text-lg">Vetted Cleaners</h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 leading-relaxed">Experienced, vetted cleaners. Ask us about references and insurance for your specific job.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CORE SERVICES GRID -->
+  <section id="services" class="py-16 sm:py-24 bg-obsidian-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+        <span class="inline-block text-xs font-bold uppercase tracking-[0.2em] text-gold-400 bg-gold-500/10 border border-gold-500/25 px-3.5 py-1 rounded-full mb-3">Core Service Offerings</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white tracking-tight">
+          Cleaning Solutions Built Around Your Needs
+        </h2>
+        <p class="text-zinc-400 text-base sm:text-lg mt-3 leading-relaxed">
+          From once-off deep cleans to scheduled commercial contracts, Golden Crown cleans every space with care, speed, and accountability.
+        </p>
+      </div>
+
+      <!-- 4-Card Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+
+        <!-- Service 1 -->
+        <article class="group bg-obsidian-900 rounded-2xl border border-zinc-800 hover:border-gold-500/60 p-7 sm:p-8 transition-all flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-xl gold-gradient text-obsidian-950 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">Residential</span>
+            </div>
+
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Residential Cleaning</h3>
+            <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+              Dependable deep cleans, regular home cleaning, and detailed kitchen and bathroom cleans handled neatly and respectfully inside your home.
+            </p>
+
+            <ul class="mt-5 space-y-2.5 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Once-off and recurring cleans across Gauteng</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Respectful, vetted cleaners &amp; zero mess</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Quality products &amp; spotless finishes</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-7 pt-5 border-t border-zinc-800 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              @click="selectServiceAndScroll('Residential Cleaning')"
+              class="text-sm font-bold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1.5 transition-colors"
+            >
+              <span>Request Free Quote</span>
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <a
+              href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20a%20quote%20for%20Residential%20Cleaning."
+              :href="quickWhatsApp('Hello Golden Crown, I would like a quote for Residential Cleaning.')"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold px-3.5 py-2 rounded-lg bg-obsidian-950 border border-zinc-700 hover:border-whatsapp-500 text-zinc-200 transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="group bg-obsidian-900 rounded-2xl border border-zinc-800 hover:border-gold-500/60 p-7 sm:p-8 transition-all flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-xl gold-gradient text-obsidian-950 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">Commercial</span>
+            </div>
+
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Commercial &amp; Office Cleaning</h3>
+            <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+              Reliable daily, weekly or monthly cleaning, hygiene-focused routines, and scheduled servicing for offices, retail spaces, and body corporates.
+            </p>
+
+            <ul class="mt-5 space-y-2.5 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>After-hours work by arrangement</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Detailed invoicing &amp; cleaning checklists</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>A clear point of contact on every contract</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-7 pt-5 border-t border-zinc-800 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              @click="selectServiceAndScroll('Commercial & Office Cleaning')"
+              class="text-sm font-bold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1.5 transition-colors"
+            >
+              <span>Request Commercial Quote</span>
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <a
+              href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20a%20quote%20for%20Commercial%20%26%20Office%20Cleaning."
+              :href="quickWhatsApp('Hello Golden Crown, I would like a quote for Commercial & Office Cleaning.')"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold px-3.5 py-2 rounded-lg bg-obsidian-950 border border-zinc-700 hover:border-whatsapp-500 text-zinc-200 transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="group bg-obsidian-900 rounded-2xl border border-zinc-800 hover:border-gold-500/60 p-7 sm:p-8 transition-all flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-xl gold-gradient text-obsidian-950 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">Specialist</span>
+            </div>
+
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Specialised Cleaning</h3>
+            <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+              Carpet and upholstery cleaning, window cleaning, and specialist deep cleans using professional-grade equipment and products.
+            </p>
+
+            <ul class="mt-5 space-y-2.5 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Thorough assessment before quoting</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Professional-grade equipment &amp; products</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Final walk-through &amp; quality check</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-7 pt-5 border-t border-zinc-800 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              @click="selectServiceAndScroll('Specialised Cleaning')"
+              class="text-sm font-bold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1.5 transition-colors"
+            >
+              <span>Book a Clean</span>
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <a
+              href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20to%20book%20Specialised%20Cleaning."
+              :href="quickWhatsApp('Hello Golden Crown, I would like to book Specialised Cleaning.')"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold px-3.5 py-2 rounded-lg bg-obsidian-950 border border-zinc-700 hover:border-whatsapp-500 text-zinc-200 transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="group bg-obsidian-900 rounded-2xl border border-zinc-800 hover:border-gold-500/60 p-7 sm:p-8 transition-all flex flex-col justify-between shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <div class="w-12 h-12 rounded-xl gold-gradient text-obsidian-950 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+                <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-gold-400 bg-gold-500/10 px-3 py-1 rounded-full">Fast Booking</span>
+            </div>
+
+            <h3 class="font-display font-bold text-xl sm:text-2xl text-white">Move-In/Out &amp; Once-Off Cleans</h3>
+            <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+              Time-sensitive move-in, move-out and once-off cleans, ready before handover, inspection or moving day.
+            </p>
+
+            <ul class="mt-5 space-y-2.5 text-sm text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Direct dispatch across Johannesburg &amp; Pretoria</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Clear arrival times &amp; updates on the day</span>
+              </li>
+              <li class="flex items-center gap-2.5">
+                <svg aria-hidden="true" class="w-4 h-4 text-gold-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                <span>Walk-through &amp; sign-off on completion</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-7 pt-5 border-t border-zinc-800 flex items-center justify-between gap-3">
+            <button
+              type="button"
+              @click="selectServiceAndScroll('Move-In/Out & Once-Off Cleans')"
+              class="text-sm font-bold text-gold-400 hover:text-gold-300 inline-flex items-center gap-1.5 transition-colors"
+            >
+              <span>Request Fast Booking</span>
+              <svg aria-hidden="true" class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+            <a
+              href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20need%20a%20Move-In%2FOut%20or%20once-off%20clean."
+              :href="quickWhatsApp('Hello Golden Crown, I need a Move-In/Out or once-off clean.')"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-xs font-semibold px-3.5 py-2 rounded-lg bg-obsidian-950 border border-zinc-700 hover:border-whatsapp-500 text-zinc-200 transition-colors"
+            >
+              WhatsApp Us
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHY CHOOSE GOLDEN CROWN (3-Column Breakdown) -->
+  <section id="why-us" class="py-16 sm:py-24 bg-obsidian-900 border-y border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="max-w-2xl mx-auto text-center mb-12 sm:mb-16">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">The Golden Crown Standard</span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-2">
+          Why Gauteng Clients Choose Golden Crown
+        </h2>
+        <p class="text-zinc-400 text-sm sm:text-base mt-3">
+          We built our reputation on showing up when promised, pricing honestly, and delivering cleaning you can see.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+
+        <!-- Column 1: Unmatched Reliability -->
+        <div class="bg-obsidian-950 rounded-2xl p-7 border border-zinc-800 relative overflow-hidden">
+          <div class="text-5xl font-display font-extrabold text-gold-500/15 absolute top-4 right-5 select-none">01</div>
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center mb-5">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white">Rock-Solid Reliability</h3>
+          <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+            No missed appointments or radio silence. We confirm arrival windows, communicate proactively, and complete every clean on schedule.
+          </p>
+        </div>
+
+        <!-- Column 2: Transparent Pricing -->
+        <div class="bg-obsidian-950 rounded-2xl p-7 border border-zinc-800 relative overflow-hidden">
+          <div class="text-5xl font-display font-extrabold text-gold-500/15 absolute top-4 right-5 select-none">02</div>
+          <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 text-gold-400 flex items-center justify-center mb-5">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white">Transparent Pricing</h3>
+          <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+            Clear, itemized written quotes before work begins. No surprise add-ons or inflated travel or booking fees — just honest, competitive Gauteng rates.
+          </p>
+        </div>
+
+        <!-- Column 3: Experienced Cleaners -->
+        <div class="bg-obsidian-950 rounded-2xl p-7 border border-gold-500/40 relative overflow-hidden shadow-lg shadow-gold-500/5">
+          <div class="text-5xl font-display font-extrabold text-gold-500/15 absolute top-4 right-5 select-none">03</div>
+          <div class="w-12 h-12 rounded-xl gold-gradient text-obsidian-950 flex items-center justify-center mb-5">
+            <svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white">Experienced Cleaners</h3>
+          <p class="text-sm text-zinc-400 mt-2.5 leading-relaxed">
+            Seasoned professionals who take pride in attention to detail, quality products, and leaving every space spotless.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WORK DONE -->
+  <section id="work" class="py-16 sm:py-24 bg-obsidian-950"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-2xl mb-10"><span class="text-xs font-bold uppercase tracking-[0.2em] text-gold-400">Our Work</span><h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-1.5">Recent Work Done</h2><p class="text-zinc-400 text-sm sm:text-base mt-3">A look at completed jobs across Gauteng.</p></div><div class="grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-1.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 1</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-2.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 2</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-3.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 3</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-4.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 4</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-5.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 5</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure><figure class="rounded-2xl border border-zinc-800 bg-obsidian-900 overflow-hidden"><div class="aspect-[4/3] flex items-center justify-center text-zinc-500 text-xs bg-gradient-to-br from-obsidian-800 to-obsidian-950"><!-- Replace this div with: <img src="images/job-6.jpg" alt="Describe the job" class="w-full h-full object-cover" loading="lazy"> -->Job photo 6</div><figcaption class="p-3.5 text-xs text-zinc-400">Job title &bull; Suburb</figcaption></figure></div></div></section>
+
+  <!-- QUOTE REQUEST & DIRECT CONTACT SECTION -->
+  <section id="quote" class="py-16 sm:py-24 bg-obsidian-900 border-t border-zinc-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-obsidian-950 rounded-3xl overflow-hidden border border-gold-500/30 shadow-2xl grid lg:grid-cols-12">
+
+        <!-- Left Executive Contact Panel -->
+        <div class="lg:col-span-5 p-7 sm:p-10 bg-gradient-to-br from-obsidian-900 via-obsidian-950 to-black border-b lg:border-b-0 lg:border-r border-zinc-800 flex flex-col justify-between">
+          <div>
+            <span class="inline-block text-[11px] font-bold uppercase tracking-widest gold-gradient text-obsidian-950 px-3 py-1 rounded-full mb-4">Free Quote</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white leading-tight">
+              Get Your Free Quote From Golden Crown Today
+            </h2>
+            <p class="text-sm text-zinc-400 mt-3 leading-relaxed">
+              Complete the form and send your request directly to our team via WhatsApp — or call us for immediate assistance anywhere in Gauteng.
+            </p>
+
+            <div class="mt-8 space-y-3.5">
+              <a
+                href="tel:+27632373143"
+                :href="'tel:' + phoneRaw"
+                class="flex items-center gap-3.5 p-3.5 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-gold-500/60 transition-colors"
+              >
+                <span class="w-10 h-10 rounded-lg gold-gradient text-obsidian-950 flex items-center justify-center shrink-0">
+                  <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                </span>
+                <div>
+                  <span class="block text-xs text-zinc-400">Call Us Direct</span>
+                  <span class="font-display font-bold text-base text-white" x-text="phoneDisplay">063 237 3143</span>
+                </div>
+              </a>
+
+              <a
+                href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20a%20free%20quote."
+                :href="quickWhatsApp('Hello Golden Crown, I would like a free quote.')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3.5 p-3.5 rounded-xl bg-obsidian-900 border border-zinc-800 hover:border-whatsapp-500/60 transition-colors"
+              >
+                <span class="w-10 h-10 rounded-lg bg-whatsapp-600 text-white flex items-center justify-center shrink-0">
+                  <svg aria-hidden="true" class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.031-1.313-5-4.375-5.156-4.578-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406 0 .578.016.188.016.438-.078.688.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.156.328-.297.5-.156.172-.313.391-.453.516-.156.141-.313.297-.141.594.172.297.766 1.266 1.656 2.063 1.141 1.016 2.109 1.328 2.406 1.484.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.703.813 2 .953.297.141.484.219.563.344.078.125.078.734-.172 1.438z"/></svg>
+                </span>
+                <div>
+                  <span class="block text-xs text-zinc-400">WhatsApp Instant Chat</span>
+                  <span class="font-display font-bold text-base text-white">Fast Quote Response</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6 border-t border-zinc-800 text-xs text-zinc-400">
+            <p class="font-semibold text-gold-400 mb-1">Gauteng Coverage:</p>
+            <p>Johannesburg • Sandton • Randburg • Midrand • Centurion • Pretoria • East &amp; West Rand</p>
+          </div>
+        </div>
+
+        <!-- Right Interactive Quote Form -->
+        <div class="lg:col-span-7 p-7 sm:p-10 bg-obsidian-950">
+          <form @submit.prevent="submitQuote()" class="space-y-4" novalidate>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="gc-name" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Full Name *</label>
+                <input
+                  id="gc-name" autocomplete="name"
+                  type="text"
+                  x-model.trim="form.name"
+                  @input="errors.name = ''"
+                  placeholder="e.g. Thabo Mokoena"
+                  class="w-full px-4 py-3 rounded-xl bg-obsidian-900 border text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-gold-400 transition-colors"
+                  :class="errors.name ? 'border-red-500' : 'border-zinc-700'"
+                />
+                <p x-show="errors.name" x-text="errors.name" class="text-xs text-red-400 mt-1" x-cloak></p>
+              </div>
+
+              <div>
+                <label for="gc-phone" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Phone Number *</label>
+                <input
+                  id="gc-phone" autocomplete="tel"
+                  type="tel"
+                  inputmode="tel"
+                  x-model.trim="form.phone"
+                  @input="errors.phone = ''"
+                  placeholder="e.g. 082 123 4567"
+                  class="w-full px-4 py-3 rounded-xl bg-obsidian-900 border text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-gold-400 transition-colors"
+                  :class="errors.phone ? 'border-red-500' : 'border-zinc-700'"
+                />
+                <p x-show="errors.phone" x-text="errors.phone" class="text-xs text-red-400 mt-1" x-cloak></p>
+              </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="gc-service" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Service Needed *</label>
+                <select
+                  id="gc-service"
+                  x-model="form.service"
+                  @change="errors.service = ''"
+                  class="w-full px-4 py-3 rounded-xl bg-obsidian-900 border text-sm text-white focus:outline-none focus:border-gold-400 transition-colors"
+                  :class="errors.service ? 'border-red-500' : 'border-zinc-700'"
+                >
+                  <option value="" disabled>Select a service...</option>
+                  <option value="Residential Cleaning">Residential Cleaning</option>
+                  <option value="Commercial & Office Cleaning">Commercial &amp; Office Cleaning</option>
+                  <option value="Specialised Cleaning">Specialised Cleaning</option>
+                  <option value="Move-In/Out & Once-Off Cleans">Move-In/Out &amp; Once-Off Cleans</option>
+                </select>
+                <p x-show="errors.service" x-text="errors.service" class="text-xs text-red-400 mt-1" x-cloak></p>
+              </div>
+
+              <div>
+                <label for="gc-area" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Gauteng Area / Suburb</label>
+                <input
+                  id="gc-area"
+                  type="text"
+                  x-model.trim="form.area"
+                  placeholder="e.g. Sandton, Centurion..."
+                  class="w-full px-4 py-3 rounded-xl bg-obsidian-900 border border-zinc-700 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-gold-400 transition-colors"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="gc-details" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Cleaning Details (Optional)</label>
+              <textarea
+                id="gc-details"
+                rows="3"
+                x-model.trim="form.notes"
+                placeholder="Tell us briefly what needs cleaning (size of property, rooms) and your preferred date..."
+                class="w-full px-4 py-3 rounded-xl bg-obsidian-900 border border-zinc-700 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-gold-400 transition-colors resize-none"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center gap-2.5 gold-gradient gold-gradient-hover active:scale-[0.99] text-obsidian-950 font-extrabold text-base py-4 px-6 rounded-xl shadow-xl shadow-gold-500/20 transition-all"
+            >
+              <span>Send Quote Request via WhatsApp</span>
+              <svg aria-hidden="true" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </button>
+
+            <!-- Fallback Link -->
+            <div
+              x-show="submittedUrl"
+              x-cloak
+              class="p-3.5 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-between gap-3 text-xs text-gold-300"
+            >
+              <span><strong>WhatsApp Ready:</strong> Tap if it didn’t open automatically.</span>
+              <a :href="submittedUrl" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg gold-gradient text-obsidian-950 font-bold shrink-0">Open WhatsApp</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+  <!-- FOOTER -->
+  <footer class="bg-black text-zinc-400 py-10 border-t border-zinc-800/90">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg gold-gradient flex items-center justify-center text-obsidian-950">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="block text-white font-display font-bold tracking-wide uppercase text-sm">Golden Crown</span>
+          <span class="block text-xs text-zinc-400">Gauteng, South Africa</span>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs">
+        <a href="tel:+27632373143" :href="'tel:' + phoneRaw" class="text-gold-400 hover:text-gold-300 font-semibold transition-colors">
+          Call: <span x-text="phoneDisplay">063 237 3143</span>
+        </a>
+        <a href="https://wa.me/27632373143" :href="quickWhatsApp('Hello Golden Crown, I would like to enquire about your services.')" target="_blank" rel="noopener noreferrer" class="text-zinc-300 hover:text-white font-semibold transition-colors">
+          WhatsApp Direct
+        </a>
+        <span>Mon–Sat: 07:00 – 18:00</span>
+      </div>
+
+      <p class="text-xs">&copy; <span x-text="new Date().getFullYear()">2026</span> Golden Crown. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 5. STICKY MOBILE CALL & WHATSAPP FLOATING ACTION BAR -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-obsidian-950/95 backdrop-blur-md border-t border-zinc-800 px-3 py-2.5 shadow-[0_-8px_30px_rgba(0,0,0,0.6)]">
+    <div class="grid grid-cols-2 gap-2.5">
+      <a
+        href="tel:+27632373143"
+        :href="'tel:' + phoneRaw"
+        class="inline-flex items-center justify-center gap-2 gold-gradient text-obsidian-950 font-extrabold text-sm py-3 rounded-xl shadow-md"
+      >
+        <svg aria-hidden="true" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span>Call Now</span>
+      </a>
+      <a
+        href="https://wa.me/27632373143?text=Hello%20Golden%20Crown%2C%20I%20would%20like%20a%20free%20quote."
+        :href="quickWhatsApp('Hello Golden Crown, I would like a free quote.')"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 bg-whatsapp-600 active:bg-whatsapp-700 text-white font-extrabold text-sm py-3 rounded-xl shadow-md"
+      >
+        <svg aria-hidden="true" class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.516.078-1.172.109-1.891-.125-.438-.141-1-.328-1.719-.641-3.031-1.313-5-4.375-5.156-4.578-.156-.203-1.234-1.641-1.234-3.125s.781-2.219 1.063-2.516c.281-.297.609-.375.813-.375.203 0 .406 0 .578.016.188.016.438-.078.688.531.25.609.859 2.094.938 2.25.078.156.125.344.031.547-.094.203-.156.328-.297.5-.156.172-.313.391-.453.516-.156.141-.313.297-.141.594.172.297.766 1.266 1.656 2.063 1.141 1.016 2.109 1.328 2.406 1.484.297.156.469.125.641-.078.172-.203.75-.875.953-1.172.203-.297.406-.25.672-.156.266.094 1.703.813 2 .953.297.141.484.219.563.344.078.125.078.734-.172 1.438z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Alpine.js Logic -->
+  <script>
+    function goldenCrownApp() {
+      return {
+        // Single place to update Golden Crown's official phone & WhatsApp number
+        whatsappNumber: '27632373143',
+        phoneRaw: '+27632373143',
+        phoneDisplay: '063 237 3143',
+        menu: false,
+
+        serviceCards: [
+          {
+            title: 'Residential Cleaning',
+            shortDesc: 'Deep cleans & regular home cleaning'
+          },
+          {
+            title: 'Commercial & Office Cleaning',
+            shortDesc: 'Offices, retail & body corporates'
+          },
+          {
+            title: 'Specialised Cleaning',
+            shortDesc: 'Carpets, upholstery, windows & more'
+          },
+          {
+            title: 'Move-In/Out & Once-Off Cleans',
+            shortDesc: 'Fast booking before handover or moving day'
+          }
+        ],
+
+        form: {
+          name: '',
+          phone: '',
+          service: '',
+          area: '',
+          notes: ''
+        },
+        errors: {
+          name: '',
+          phone: '',
+          service: ''
+        },
+        submittedUrl: '',
+
+        quickWhatsApp(message) {
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
+        },
+
+        selectServiceAndScroll(serviceTitle) {
+          this.form.service = serviceTitle;
+          this.errors.service = '';
+          const section = document.getElementById('quote');
+          if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setTimeout(() => {
+              const nameEl = document.getElementById('gc-name');
+              if (nameEl) nameEl.focus({ preventScroll: true });
+            }, 500);
+          }
+        },
+
+        submitQuote() {
+          this.errors = { name: '', phone: '', service: '' };
+          let isValid = true;
+
+          if (!this.form.name || this.form.name.length < 2) {
+            this.errors.name = 'Please enter your full name.';
+            isValid = false;
+          }
+
+          const digits = this.form.phone.replace(/[\s\-()]/g, '');
+          if (!digits || digits.length < 9) {
+            this.errors.phone = 'Please enter a valid contact number.';
+            isValid = false;
+          }
+
+          if (!this.form.service) {
+            this.errors.service = 'Please select a service.';
+            isValid = false;
+          }
+
+          if (!isValid) return;
+
+          const lines = [
+            'Hello Golden Crown,',
+            'I would like to request a free quote:',
+            '',
+            `*Name:* ${this.form.name}`,
+            `*Phone:* ${this.form.phone}`,
+            `*Service:* ${this.form.service}`
+          ];
+
+          if (this.form.area) {
+            lines.push(`*Gauteng Area:* ${this.form.area}`);
+          }
+          if (this.form.notes) {
+            lines.push(`*Details:* ${this.form.notes}`);
+          }
+
+          const url = this.quickWhatsApp(lines.join('\n'));
+          this.submittedUrl = url;
+          window.open(url, '_blank', 'noopener,noreferrer');
+        }
+      };
+    }
+  </script>
+</body>
+</html>
